@@ -12,6 +12,8 @@ namespace CustomDoubleLinkedList.Models
         public Node Previous { get; set; }
         public Node Next { get; set; }
 
+        public Node() { }
+
         public Node(int t)
         {
             Value = t;

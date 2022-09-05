@@ -5,11 +5,11 @@ namespace Test
 {
     public class Tests
     {
-        private DoublyLinkedList linkedList;
+        private DoubleLinkedList linkedList;
         [SetUp]
         public void Setup()
         {
-            linkedList = new DoublyLinkedList();
+            linkedList = new DoubleLinkedList();
         }
 
         [Test]
