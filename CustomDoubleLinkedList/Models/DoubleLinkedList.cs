@@ -15,11 +15,14 @@ namespace CustomDoubleLinkedList.Models
                 Node node = GetLastNode();
                 return node;
             }
-
+            set { }
         }
 
         public Node Next => Head.Next;
         public Node Previous => Head.Previous;
+
+        private int _count;
+        public int Length => _count;
 
         public IEnumerator<Node> GetEnumerator()
         {
@@ -28,7 +31,6 @@ namespace CustomDoubleLinkedList.Models
             {
                 yield return current;
                 current = current.Next;
-
             }
         }
 
@@ -40,7 +42,7 @@ namespace CustomDoubleLinkedList.Models
         public IEnumerable<Node> GetEnumeratorReverse()
         {
             Node current = Last;
-            while(current is not null)
+            while (current is not null)
             {
                 yield return current;
                 current = current.Previous;
@@ -50,7 +52,6 @@ namespace CustomDoubleLinkedList.Models
 
         public void Add(int data)
         {
-
             Node newNode = new Node(data);
             if (Head is null)
             {
@@ -62,6 +63,8 @@ namespace CustomDoubleLinkedList.Models
                 current.Next = newNode;
                 newNode.Previous = current;
             }
+
+            _count++;
         }
 
         /// <summary>
@@ -84,6 +87,7 @@ namespace CustomDoubleLinkedList.Models
             {
                 newNode.Next = Head;
                 Head.Previous = newNode;
+                _count++;
             }
             Head = newNode;
         }
@@ -99,22 +103,19 @@ namespace CustomDoubleLinkedList.Models
             Node lastNode = Last;
             lastNode.Next = newNode;
             newNode.Previous = lastNode;
+            _count++;
         }
 
         public void RemoveAt(int position)
         {
-            if (position < 1)
-            {
-                return;
-            }
-            else if (position == 1 && Head != null)
+            _count--;
+            if (position == 1 && Head != null)
             {
                 Node nodeToDelete = Head;
                 Head = Head.Next;
                 nodeToDelete = null;
                 if (Head != null)
                     Head.Previous = null;
-                return;
             }
             else
             {
@@ -127,12 +128,18 @@ namespace CustomDoubleLinkedList.Models
                         temp = temp.Next;
                     }
                 }
-                if (temp != null && temp.Next != null)
+                if (temp != null)
                 {
                     Node nodeToDelete = temp.Next;
                     temp.Next = temp.Next.Next;
-                    if (temp.Next.Next != null)
-                        temp.Next.Next.Previous = temp.Next;
+                    if (temp.Next?.Next != null)
+                    {
+                        temp.Next.Previous = temp.Next;
+                    }
+                    else
+                    {
+                        Last = temp;
+                    }
                     nodeToDelete = null;
                 }
                 else
@@ -140,6 +147,7 @@ namespace CustomDoubleLinkedList.Models
                     Console.Write("\nThe node is already null.");
                 }
             }
+
         }
     }
 }
