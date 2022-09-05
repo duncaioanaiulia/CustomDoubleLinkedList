@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace CustomDoubleLinkedList.Models
 {
-    internal class DoublyLinkedList
+    public class DoublyLinkedList
     {
         private Node _head;
 
-        internal Node First => _head;
+        public Node First => _head;
 
-        internal Node Last
+        public Node Last
         {
             get
             {
@@ -23,8 +23,8 @@ namespace CustomDoubleLinkedList.Models
 
         }
 
-        internal Node Next => _head.Next;
-        internal Node Previous => _head.Previous;
+        public Node Next => _head.Next;
+        public Node Previous => _head.Previous;
 
     }
 }

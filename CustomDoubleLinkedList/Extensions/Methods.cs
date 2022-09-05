@@ -7,13 +7,13 @@ using CustomDoubleLinkedList.Models;
 
 namespace CustomDoubleLinkedList.Extensions
 {
-    internal static class Methods
+    public static class Methods
     {
 
         /// <summary>
         /// Methode return the last node. Is starting in chain  at the _head and move forward one more at a time until the Next node is null, and is not any node in the chain.
         /// </summary>
-        internal static Node GetLastNode(this Node _head)
+        public static Node GetLastNode(this Node _head)
         {
             Node node = _head;
             while (node.Next is not null)
@@ -23,7 +23,7 @@ namespace CustomDoubleLinkedList.Extensions
             return node;
         }
 
-        internal static void AddFirst(this Node _head, int node)
+        public static void AddFirst(this Node _head, int node)
         {
             Node newNode = new Node(node);
             if(_head is not null)
@@ -34,7 +34,7 @@ namespace CustomDoubleLinkedList.Extensions
             _head = newNode;
         }
 
-        internal static void AddLast(this Node _head, int t)
+        public static void AddLast(this Node _head, int t)
         {
             Node newNode = new Node(t);
             if(_head is null)

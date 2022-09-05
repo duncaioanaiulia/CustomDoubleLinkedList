@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CustomDoubleLinkedList.Models
 {
-    internal class Node
+    public class Node
     {
-        internal int Value { get; set; }
-        internal Node Previous { get; set; }
-        internal Node Next { get; set; }
+        public int Value { get; set; }
+        public Node Previous { get; set; }
+        public Node Next { get; set; }
 
         public Node(int t)
         {
