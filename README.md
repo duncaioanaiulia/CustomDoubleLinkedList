@@ -1,3 +1,13 @@
+# What is it in this repository?
+In this project you will find the next tasks:
+     1. Creating the Node class
+     1. Creating the DoublyLinkedList<T> class.
+     2. AddFirst(T t) and AddLast(T t) methods to add new nodes at the ends of the chain.
+     3. Remove(Node node) method
+     4. Implement IEnumerable interface
+     5. Sort with Implement Quick Sort
+
+
 # What is a Linked List?
 
 Is a liniar collection of data elements whose order is not given by their physical in memory.Instead, each element points to the next .
