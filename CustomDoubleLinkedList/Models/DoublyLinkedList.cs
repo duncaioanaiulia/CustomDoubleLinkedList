@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomDoubleLinkedList.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,51 +7,24 @@ using System.Threading.Tasks;
 
 namespace CustomDoubleLinkedList.Models
 {
-    internal class DoublyLinkedList<T>
+    internal class DoublyLinkedList
     {
-        // this Node class is created in DoublyLinkedList for easy reference
-        internal class Node
-        {
-            internal T Value { get; set; }
-            internal Node Previous { get; set; }
-            internal Node Next { get; set; }
-
-            public Node(T t)
-            {
-                Value = t;
-                Previous = null;
-                Next = null;
-            }
-        }
-
         private Node _head;
 
-        public Node First => _head;
+        internal Node First => _head;
 
-        public Node Last
+        internal Node Last
         {
             get
             {
-                Node node = GetLastNode();
+                Node node = _head.GetLastNode();
                 return node;
             }
 
         }
 
-        public Node Next => _head.Next;
-        public Node Previous => _head.Previous;
+        internal Node Next => _head.Next;
+        internal Node Previous => _head.Previous;
 
-        /// <summary>
-        /// Methode return the last node. Is starting in chain at the _head and move forward one more at a time until the Next node is null, and is not any node in the chain.
-        /// </summary>
-        private Node GetLastNode()
-        {
-            Node node = _head;
-            while (node.Next is not null)
-            {
-                node = node.Next;
-            }
-            return node;
-        }
     }
 }
