@@ -40,9 +40,17 @@ namespace CustomDoubleLinkedList.Models
         public Node Next => _head.Next;
         public Node Previous => _head.Previous;
 
-        private DoublyLinkedList<T>.Node GetLastNode()
+        /// <summary>
+        /// Methode return the last node. Is starting in chain at the _head and move forward one more at a time until the Next node is null, and is not any node in the chain.
+        /// </summary>
+        private Node GetLastNode()
         {
-            throw new NotImplementedException();
+            Node node = _head;
+            while (node.Next is not null)
+            {
+                node = node.Next;
+            }
+            return node;
         }
     }
 }
