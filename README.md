@@ -7,6 +7,7 @@ In this project you will find the next tasks:
      3. Remove(Node node) method
      4. Implement IEnumerable interface
      5. Sort with Implement Quick Sort
+     6.Unit testing for methodes
 ```
 
 
