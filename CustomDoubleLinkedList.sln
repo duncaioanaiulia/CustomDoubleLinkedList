@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomDoubleLinkedList", "CustomDoubleLinkedList\CustomDoubleLinkedList.csproj", "{CA826B76-27CA-41B5-B5EB-81B50333754B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomDoubleLinkedList", "CustomDoubleLinkedList\CustomDoubleLinkedList.csproj", "{CA826B76-27CA-41B5-B5EB-81B50333754B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestDoubleLinkedList", "UnitTestDoubleLinkedList\UnitTestDoubleLinkedList.csproj", "{BD21EDD9-305C-468C-89D2-BBBC15D12237}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{8D86E586-C3E1-4F29-82EF-0EF82A3126ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{CA826B76-27CA-41B5-B5EB-81B50333754B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA826B76-27CA-41B5-B5EB-81B50333754B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA826B76-27CA-41B5-B5EB-81B50333754B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BD21EDD9-305C-468C-89D2-BBBC15D12237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BD21EDD9-305C-468C-89D2-BBBC15D12237}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BD21EDD9-305C-468C-89D2-BBBC15D12237}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD21EDD9-305C-468C-89D2-BBBC15D12237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D86E586-C3E1-4F29-82EF-0EF82A3126ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D86E586-C3E1-4F29-82EF-0EF82A3126ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D86E586-C3E1-4F29-82EF-0EF82A3126ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D86E586-C3E1-4F29-82EF-0EF82A3126ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

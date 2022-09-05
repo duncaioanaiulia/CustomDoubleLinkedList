@@ -1,14 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CustomDoubleLinkedList.Models;
+﻿using CustomDoubleLinkedList.Models;
 
 namespace CustomDoubleLinkedList.Extensions
 {
     public static class Methods
     {
+        public static void Add (this DoublyLinkedList list, int data)
+        {
+
+            Node newNode = new Node(data);
+            if(list.Head is null)
+            {
+                list.Head = newNode;
+            }
+            else
+            {
+                Node current= list.Head.GetLastNode();
+                current.Next = newNode;
+                newNode.Previous = current;
+            }
+        }
 
         /// <summary>
         /// Methode return the last node. Is starting in chain  at the _head and move forward one more at a time until the Next node is null, and is not any node in the chain.
@@ -23,26 +33,26 @@ namespace CustomDoubleLinkedList.Extensions
             return node;
         }
 
-        public static void AddFirst(this Node _head, int node)
+        public static void AddFirst(this DoublyLinkedList list, int node)
         {
             Node newNode = new Node(node);
-            if(_head is not null)
+            if(list is not null)
             {
-                newNode.Next = _head;
-                _head.Previous = newNode;
+                newNode.Next = list.Head;
+                list.Head.Previous = newNode;
             }
-            _head = newNode;
+            list.Head = newNode;
         }
 
-        public static void AddLast(this Node _head, int t)
+        public static void AddLast(this DoublyLinkedList list, int t)
         {
             Node newNode = new Node(t);
-            if(_head is null)
+            if(list is null)
             {
-                _head = newNode;
+                list.Head = newNode;
                 return;
             }
-            Node lastNode = _head.GetLastNode();
+            Node lastNode = list.Head.GetLastNode();
             lastNode.Next = newNode;
             newNode.Previous = lastNode;
         }
